@@ -1,0 +1,16 @@
+def count_level(filename, level):
+    count = 0
+    with open(filename, "r") as file:
+        for line in file:
+            if line.startswith(level):
+                count = count + 1
+    return count
+
+
+error_count = count_level("ERROR_1.txt", "ERROR")
+warning_count = count_level("ERROR_1.txt", "WARNING")
+info_count = count_level("ERROR_1.txt", "INFO")
+
+print("ERROR:", error_count)
+print("WARNING:", warning_count)
+print("INFO:", info_count)
